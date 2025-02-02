@@ -1,0 +1,22 @@
+{
+    "hospitals": [
+        {
+            "id": 1,
+            "name": "City General Hospital",
+            "lat": 40.7128,
+            "lng": -74.0060,
+            "address": "123 Healthcare Ave",
+            "phone": "555-0123",
+            "emergency": true
+        },
+        {
+            "id": 2,
+            "name": "Metropolitan Medical Center",
+            "lat": 40.7589,
+            "lng": -73.9851,
+            "address": "456 Medical Blvd",
+            "phone": "555-0456",
+            "emergency": true
+        }
+    ]
+}
