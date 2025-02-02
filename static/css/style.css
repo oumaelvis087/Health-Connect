@@ -1,95 +1,196 @@
-/* General Styles */
-body {
-    font-family: 'Arial', sans-serif;
-}
-
-/* Map Containers */
-.map-container {
-    height: 400px;
-    width: 100%;
-    border-radius: 8px;
-    margin: 20px 0;
-    background-color: #f8f9fa;
-}
-
-/* Section Styles */
-section {
-    padding: 20px 0;
-}
-
-/* Card Styles */
-.card {
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-/* Form Styles */
-.form-control:focus {
-    border-color: #0d6efd;
-    box-shadow: 0 0 0 0.2rem rgba(13,110,253,0.25);
-}
-
-/* Button Styles */
-.btn-primary {
-    padding: 8px 20px;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    transition: transform 0.2s;
-}
-
-/* Hero Section */
-#hero {
-    background: linear-gradient(135deg, #0d6efd 0%, #0099ff 100%);
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f9fafb;
+    color: #333;
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #007bff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
     color: white;
-    padding: 60px 0;
-    border-radius: 10px;
-    margin-bottom: 40px;
-}
-
-/* Health Tracker Styles */
-#vitals-history {
-    min-height: 300px;
-    padding: 20px;
-    background-color: #f8f9fa;
+  }
+  
+  .menu-toggle {
+    display: none; /* Hidden by default */
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #ffffffcc;
+  }
+  
+  /* Responsive Design - Hamburger Menu */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block; /* Show hamburger menu on small screens */
+    }
+  
+    .nav-links {
+      display: none; /* Hide links by default */
+      flex-direction: column;
+      background: #007bff;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .nav-links.active {
+      display: flex; /* Show links when active */
+    }
+  
+    .nav-links li {
+      margin: 10px 0;
+    }
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.8)), url('https://via.placeholder.com/1920x500') no-repeat center center/cover;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .hero-content p {
+    font-size: 18px;
+  }
+  
+  /* Features Section */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px;
+  }
+  
+  .feature-card {
+    background: white;
     border-radius: 8px;
-}
-
-/* BMI Calculator Styles */
-#bmi-result {
-    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .feature-card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .feature-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .primary-btn {
+    background: #007bff;
+    color: white;
+  }
+  
+  .primary-btn:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  /* Input Fields */
+  .input-field {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .tracker-form, .bmi-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Health Tracker Section */
+  .tracker-section, .bmi-section {
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .tracker-section h2, .bmi-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .result {
     margin-top: 20px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .map-container {
-        height: 300px;
-    }
-    
-    #hero {
-        padding: 40px 0;
-    }
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-out;
-}
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #777;
+    font-size: 14px;
+    padding: 20px;
+    background: #f9fafb;
+  }
