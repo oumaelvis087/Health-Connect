@@ -4,9 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Health Connect</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
   <link rel="stylesheet" href="/static/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+        /* Basic responsive styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background: #fff;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
+            .nav-links {
+                display: flex;
+            }
+        }
+    </style>
+  </head>
 <body>
   <!-- Header -->
   <header class="header">
@@ -37,21 +68,21 @@
 
     <!-- Features Section -->
     <section class="features">
-      <div class="feature-card">
+      <div class="feature-card" id="nearest-ambulance">
         <h2>Nearest Ambulance</h2>
         <p>Locate the closest ambulance using your current location.</p>
         <button id="findAmbulanceBtn" class="btn primary-btn">Find Ambulance</button>
         <div id="ambulanceResult" class="result"></div>
       </div>
 
-      <div class="feature-card">
+      <div class="feature-card" id="nearest-hospital">
         <h2>Nearest Hospital</h2>
         <p>Find the nearest hospital based on your location.</p>
         <button id="findHospitalBtn" class="btn primary-btn">Find Hospital</button>
         <div id="hospitalResult" class="result"></div>
       </div>
 
-      <div class="feature-card">
+      <div class="feature-card" id="symptoms">
         <h2>Disease Symptoms</h2>
         <p>Enter symptoms to find possible diseases and cures.</p>
         <input type="text" id="symptomInput" placeholder="Enter symptoms..." class="input-field">
@@ -61,7 +92,7 @@
     </section>
 
     <!-- Health Tracker Section -->
-    <section class="tracker-section">
+    <section class="tracker-section" id="health-tracker">
       <h2>Health Tracker</h2>
       <form id="healthTrackerForm" class="tracker-form">
         <label for="steps">Steps:</label>

@@ -194,3 +194,145 @@
     padding: 20px;
     background: #f9fafb;
   }
+  
+  /* Add these new styles */
+  .hospital-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 1rem 0;
+  }
+  
+  .hospital-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  
+  .hospital-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .emergency-badge {
+    background: #dc3545;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    display: inline-block;
+  }
+  
+  .directions-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+  }
+  
+  .directions-btn:hover {
+    background: #0056b3;
+  }
+  
+  .loading {
+    width: 40px;
+    height: 40px;
+    margin: 20px auto;
+    border-width: 4px;
+  }
+  
+  .hospital-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  
+  .hospital-header h3 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.2rem;
+  }
+  
+  .hospital-details {
+    margin: 1rem 0;
+  }
+  
+  .hospital-details p {
+    margin: 0.5rem 0;
+    color: #555;
+  }
+  
+  .hospital-details i {
+    width: 20px;
+    color: #3498db;
+    margin-right: 0.5rem;
+  }
+  
+  .hospital-actions {
+    margin-top: 1rem;
+  }
+  
+  .direction-btn {
+    width: 100%;
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .direction-btn:hover {
+    background: #2980b9;
+  }
+  
+  .loading-container {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .alert {
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+  }
+  
+  .alert-danger {
+    background: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+  }
+  
+  .alert-info {
+    background: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+  }
+  
+  .local-badge {
+    background: #28a745;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+  }
+  
+  .location-info {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .hospital-card.local {
+    border-left: 4px solid #28a745;
+  }

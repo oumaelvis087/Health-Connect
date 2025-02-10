@@ -1,7 +1,19 @@
 import requests
 from bs4 import BeautifulSoup
+from geopy.geocoders import Nominatim
+
+def geocode_address(address):
+    geolocator = Nominatim(user_agent="health_connect")
+    try:
+        location = geolocator.geocode(address, timeout=10)
+        if location:
+            return (location.latitude, location.longitude)
+    except Exception as e:
+        print(f"Geocoding error for {address}: {str(e)}")
+    return (None, None)
 
 def scrape_hospital_data(url):
+    
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
     }
@@ -28,12 +40,15 @@ def scrape_hospital_data(url):
             address = columns[3].get_text(strip=True) if columns[3].has_attr('class') and 'column-4' in columns[3]['class'] else "N/A"
             phone_number = columns[4].get_text(strip=True) if columns[4].has_attr('class') and 'column-5' in columns[4]['class'] else "N/A"
 
+            lat, lng = geocode_address(address)
             hospitals.append({
                 "name": hospital_name,
                 "county": county,
                 "sub_county": sub_county,
                 "address": address,
-                "phone_number": phone_number
+                "phone_number": phone_number,
+                "lat": lat,
+                "lng": lng
             })
 
     return hospitals
